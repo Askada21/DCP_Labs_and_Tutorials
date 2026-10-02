@@ -42,6 +42,11 @@ num_arr = [random.randint(0, 10) for i in range(100)]
 print(len(num_arr))
 print(num_arr[:20:])
 print()
+
+for number in range(11):
+    print(f"{number} appears {num_arr.count(number)} times")
+print()
+
 # Guessing Game
 num = random.randint(0,10)
 while True:
