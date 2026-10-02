@@ -28,7 +28,7 @@ for fan in fans:
     print(f"{fan}") 
 print()
 
-# Random
+# Guessing Game
 num = random.randint(0,10)
 while True:
     guess = int(input("Whats the number? "))
