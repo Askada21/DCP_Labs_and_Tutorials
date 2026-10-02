@@ -41,6 +41,12 @@ print()
 num_arr = [random.randint(0, 10) for i in range(100)]
 print(len(num_arr))
 print(num_arr[:20:])
+
+count = 0
+for v in num_arr:
+    if v == 4:
+        count += 1
+print(count)
 print()
 
 for number in range(11):
