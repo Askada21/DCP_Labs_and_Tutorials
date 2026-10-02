@@ -51,7 +51,7 @@ print()
 num = random.randint(0,10)
 while True:
     guess = int(input("Whats the number? "))
-    if guess == i:
+    if guess == num:
         print("U guessed")
         break
     else: 
