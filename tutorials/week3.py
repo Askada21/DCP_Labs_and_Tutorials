@@ -5,10 +5,20 @@ import random
 arr = ["Liverpool", "Man Utd", "St. Pats", "Bohemians"]
 fans = [1, 0, 3, 4]
 print(arr)
+arr = arr[::-1]
+arr = arr[::-1]
+print(arr[-2::-1])
+
+try:
+    i = arr.index("Bohemians")
+    print(f"find it in location {i}")
+except: 
+    print("not found")
+
 print()
 
 # Reverse
-for i in range(len(arr)-1, -1, -1):
+for i in range(len(arr)-1, -1, -1): 
     print(arr[i])
 print()
 
