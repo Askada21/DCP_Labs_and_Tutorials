@@ -1,12 +1,23 @@
-sonnet = [
-    {"I":["From fairest creatures we desire increase,",
-    "That thereby beautys rose might never die."]},
-    {"II": ["When forty winters shall besiege thy brow,",
-    "And dig deep trenches in thy beauty’s field."]},
-    {"III":["Look in thy glass and tell the face thou viewest",
-    "Now is the time that face should form another."]}
-]
+sonnets = []
 
-#print(sonnet[0]["I"][0])
-for s in sonnet:
-    print(s)
+with open("week4/shakespere.txt", "r") as file:
+    lines = file.readlines()
+
+i = 0
+
+while i < len(lines):
+    line = lines[i].strip()
+
+    # Skip empty lines
+    if line == "":
+        i += 1
+        continue
+
+    # Roman nimeral = sonnet number 
+    roman_number = line
+
+    # Move to the first line of the sonnet 
+    i += 1
+
+    poem_lines = []
+    
