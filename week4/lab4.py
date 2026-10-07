@@ -89,3 +89,48 @@ for line_number in range(14):
         current_word = next_word
 
     print(" ".join(poem_line))
+
+# EXTRA - DANI IN ALBANIAN
+
+import random
+
+model_albanian = {}
+
+with open("week4/albanian.txt", "r", encoding="utf-8") as file:
+    text = file.read().lower()
+
+words = text.split()
+
+# Train DANI
+for i in range(len(words)):
+    word = words[i]
+
+    if word not in model_albanian:
+        model_albanian[word] = []
+
+    if i + 1 < len(words):
+        next_word = words[i + 1]
+        model_albanian[word].append(next_word)
+
+
+# Generate poem in Albanian
+print("\nDANI IN ALBANIAN\n")
+
+for line_number in range(14):
+
+    current_word = random.choice(list(model_albanian.keys()))
+    poem_line = [current_word]
+
+    while len(poem_line) < 8:
+
+        possible_words = model_albanian[current_word]
+
+        if len(possible_words) == 0:
+            break
+
+        next_word = random.choice(possible_words)
+
+        poem_line.append(next_word)
+        current_word = next_word
+
+    print(" ".join(poem_line))
