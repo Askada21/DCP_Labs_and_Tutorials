@@ -114,8 +114,7 @@ for i in range(len(words)):
 
 
 # Generate poem in Albanian
-print("\nDANI IN ALBANIAN\n")
-
+print("\nDANI IN ALBANIAN")
 for line_number in range(14):
 
     current_word = random.choice(list(model_albanian.keys()))
