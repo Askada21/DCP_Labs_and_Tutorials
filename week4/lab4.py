@@ -1,4 +1,5 @@
 # Part 1
+import random
 sonnets = []
 
 with open("week4/shakespere.txt", "r", encoding="utf-8-sig") as file:
@@ -30,11 +31,9 @@ for line in lines:
         if roman_number is not None:
             poem_lines.append(line)
 
-
 # Save the final sonnet
 if roman_number is not None:
     sonnets.append({roman_number: poem_lines})
-
 
 # Print Roman numeral + first line
 for sonnet in sonnets:
@@ -42,8 +41,6 @@ for sonnet in sonnets:
         print(number, lines[0])
 
 # Part 2
-import random
-
 model = {}
 
 for sonnet in sonnets:
@@ -68,3 +65,27 @@ for sonnet in sonnets:
             if i + 1 < len(words):
                 next_word = words[i + 1]
                 model[word].append(next_word)
+
+# Generate poem
+print("\nDANI'S POEM\n")
+
+for line_number in range(14):
+
+    current_word = random.choice(list(model.keys()))
+
+    poem_line = [current_word]
+
+    while len(poem_line) < 8:
+
+        possible_words = model[current_word]
+
+        if len(possible_words) == 0:
+            break
+
+        next_word = random.choice(possible_words)
+
+        poem_line.append(next_word)
+
+        current_word = next_word
+
+    print(" ".join(poem_line))
